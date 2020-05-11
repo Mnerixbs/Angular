@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ejercicio } from "../Ejercicio";
+import { EJERCICIOS } from "../collection-ejercicios";
 
 @Component({
   selector: 'app-ejercicios',
@@ -9,10 +10,8 @@ import { Ejercicio } from "../Ejercicio";
 export class EjerciciosComponent implements OnInit {
 
 
-  ejercicio: Ejercicio={
-     id:1,
-     name:"flexiones"
-  };
+  ejercicios = EJERCICIOS;
+
 
   constructor() { }
 
