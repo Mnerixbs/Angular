@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ejercicio } from "../Ejercicio";
 
 @Component({
   selector: 'app-ejercicios',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ejercicios.component.css']
 })
 export class EjerciciosComponent implements OnInit {
+
+
+  ejercicio: Ejercicio={
+     id:1,
+     name:"flexiones"
+  };
 
   constructor() { }
 
