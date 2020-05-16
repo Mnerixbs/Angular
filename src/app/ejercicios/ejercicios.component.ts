@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ejercicio } from "../Ejercicio";
-import { EJERCICIOS } from "../collection-ejercicios";
+import { EjercicioService } from "../ejercicio.service";
 
 @Component({
   selector: 'app-ejercicios',
@@ -10,15 +10,18 @@ import { EJERCICIOS } from "../collection-ejercicios";
 export class EjerciciosComponent implements OnInit {
 
 
-  ejercicios = EJERCICIOS;
+  ejercicios:Ejercicio[];
   ejercicioSeleccionado:Ejercicio;
 
 
-  constructor() { }
+  constructor(private ejercicioService:EjercicioService ) { }
 
-
+  getEjercicios():void{
+    this.ejercicioService.getEjercicios().subscribe(ejercicios=>this.ejercicios=ejercicios)
+  }
 
   ngOnInit(): void {
+    this.getEjercicios();
   }
 
   onSelectEjercicio(ejercicio:Ejercicio):void{
